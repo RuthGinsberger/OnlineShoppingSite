@@ -1,0 +1,28 @@
+﻿<Window x:Class="PL.OrderTracking_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="OrderTracking_Window" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="ProductsListview"  d:ItemsSource="{d:SampleData ItemCount=5}"  Margin="41,30,338,30" ItemsSource="{Binding}"
+                       FontSize="12" FontFamily="Segoe Script">
+
+            <ListView.View>
+
+                <GridView  >
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Item1}"  Header="Status" Width="200"/>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Item2}" Header="Date" Width="200"/>
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Button Content="Order details" Name="OrderDetailsBtn" HorizontalAlignment="Left" Margin="589,353,0,0" VerticalAlignment="Top" Height="51" Width="158" Click="OrderDetailsBtn_Click"/>
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="589,289,0,0" VerticalAlignment="Top" Click="Back_Click" Width="155" Height="47"/>
+    </Grid>
+</Window>

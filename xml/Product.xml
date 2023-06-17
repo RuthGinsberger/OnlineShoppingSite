@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product ID="6000004" Name="dress" Price="100" Category="womans" InStock="56" />
+  <Product ID="6000005" Name="skirt school" Price="50" Category="girls" InStock="78" />
+  <Product ID="6000006" Name="shirt" Price="30" Category="boys" InStock="32" />
+  <Product ID="6000007" Name="shirt" Price="30" Category="girls" InStock="28" />
+  <Product ID="6000008" Name="sweter" Price="200" Category="mans" InStock="16" />
+  <Product ID="6000009" Name="Coat" Price="300" Category="boys" InStock="40" />
+  <Product ID="6000010" Name="coat" Price="100" Category="baby" InStock="0" />
+  <Product ID="6000011" Name="men's shirt" Price="180" Category="mans" InStock="63" />
+  <Product ID="6000012" Name="jacket" Price="250" Category="womans" InStock="32" />
+  <Product ID="6000013" Name="Socks" Price="20" Category="girls" InStock="30" />
+  <Product ID="6000014" Name="seminari Socks" Price="30" Category="womans" InStock="97" />
+  <Product ID="6000015" Name="Skirt" Price="170" Category="womans" InStock="40" />
+  <Product ID="6000016" Name="pants" Price="80" Category="boys" InStock="36" />
+  <Product ID="6000017" Name="pants" Price="300" Category="mans" InStock="35" />
+</Products>

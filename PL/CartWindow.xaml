@@ -1,0 +1,62 @@
+﻿<Window x:Class="PL.CartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="CartWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="34,30,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox Text="{Binding Path=CustomerName,Mode=TwoWay}" HorizontalAlignment="Left" Margin="177,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Customer Email:" HorizontalAlignment="Left" Margin="34,60,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox Text="{Binding Path=CustomerEmail,Mode=TwoWay}" HorizontalAlignment="Left" Margin="177,64,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Customer Address:" HorizontalAlignment="Left" Margin="34,90,0,0" VerticalAlignment="Top" Width="110"/>
+        <TextBox Text="{Binding Path=CustomerAddress,Mode=TwoWay}" HorizontalAlignment="Left" Margin="177,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ListView Name="CartListview" ItemsSource="{Binding Items}" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ProductID}" Header="Name"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="ProductID"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price,StringFormat=₪{0}}" Header="Price"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Amount}" Header="Amount"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TotalPrice,StringFormat=₪{0}}" Header="TotalPrice"/>
+                    <GridViewColumn Header="Remove">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Remove" Width="25" Margin="25,5,5,5">🚮</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="increase">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Increase" Width="25" Margin="25,5,5,5">+</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="decrease">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Decrease" Width="25" Margin="25,5,5,5">-</Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Label Content="TotalPrice:" HorizontalAlignment="Left" Margin="34,8,0,0" VerticalAlignment="Top" Width="110" Height="23" Grid.Row="2"/>
+        <Label Content="{Binding Path=TotalPrice,StringFormat=₪{0},Mode=TwoWay}" HorizontalAlignment="Left" Margin="177,12,0,0"  VerticalAlignment="Top" Width="120" Height="24" RenderTransformOrigin="0.5,0.5" Grid.Row="2"/>
+        <Button x:Name="ConfirmBtn" Content="Confirm" IsEnabled="False" HorizontalAlignment="Center" Margin="0,31,0,0" Grid.Row="2" VerticalAlignment="Top" Width="108" Height="21" Click="Confirm"/>
+        <Button x:Name="Back" Content="Back" Style="{StaticResource classicBtn}" Click="Back_Click" Width="NaN" Height="23" Margin="639,29,35,20" Grid.Row="2" FontSize="13"/>
+    </Grid>
+</Window>
+
+

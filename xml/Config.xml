@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OrderItemId>1000030</OrderItemId>
+  <OrderId>3000030</OrderId>
+  <ProductId>6000030</ProductId>
+</Config>

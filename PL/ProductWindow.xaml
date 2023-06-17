@@ -1,0 +1,27 @@
+﻿<Window x:Class="PL.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="ProductWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="name" Text="{Binding Path=Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="326,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" />
+        <TextBox x:Name="price" Text="{Binding Path=Price,StringFormat=₪{0}, Mode=TwoWay}" HorizontalAlignment="Left" Margin="326,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184"/>
+        <TextBox x:Name="amount" Text="{Binding Path=Amount, Mode=TwoWay}" HorizontalAlignment="Left" Margin="325,217,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" />
+        <Label x:Name="nameLBL" Content="{Binding Path=Name}" HorizontalAlignment="Left" Margin="326,107,0,0" VerticalAlignment="Top" Width="184" />
+        <Label x:Name="priceLBL" Content="{Binding Path=Price,StringFormat=₪{0}}" HorizontalAlignment="Left" Margin="326,164,0,0"   VerticalAlignment="Top" Width="184"/>
+        <Label x:Name="amountLBL" Content="{Binding Path=Amount}" HorizontalAlignment="Left" Margin="325,217,0,0"   VerticalAlignment="Top" Width="184" />
+        <ComboBox Name="categorySelector" Text="{Binding Path=Category, Mode=TwoWay}" HorizontalAlignment="Left" Margin="326,272,0,0" VerticalAlignment="Top" Width="184" Height="20"/>
+        <Label x:Name="CategoryLbl" Content="{Binding Path=Category}" HorizontalAlignment="Left" Margin="326,269,0,0"  VerticalAlignment="Top" Width="184" Height="23" />
+        <Label Name="nameLbl" Content="product name" HorizontalAlignment="Left" Margin="359,74,0,0" VerticalAlignment="Top"/>
+        <Label Name="priceLbl" Content="product price" HorizontalAlignment="Left" Margin="362,129,0,0" VerticalAlignment="Top"/>
+        <Label Name="amountLbl" Content="product amount" HorizontalAlignment="Left" Margin="353,186,0,0" VerticalAlignment="Top"/>
+        <Label Name="categoryLbl" Content="category" HorizontalAlignment="Left" Margin="371,239,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="deleteProductBtn" Content="Delete!" Style="{StaticResource classicBtn}" Margin="353,354,317,0" VerticalAlignment="Top" Width="Auto" Height="39" FontSize="16" Click="deleteProductBtn_Click" />
+        <Button x:Name="updateOrAddProductBtn" Content="Update!" Style="{StaticResource classicBtn}" Margin="353,305,317,0" VerticalAlignment="Top" Width="Auto" Height="41" FontSize="16" Click="updateOrAddProductBtn_Click" />
+        <Button x:Name="cartBtn" Content="Add to cart" Style="{StaticResource classicBtn}" Margin="353,305,317,0" VerticalAlignment="Top" Width="Auto" Height="41" FontSize="16" Click="cartBtn_Click"/>
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="639,366,0,0" VerticalAlignment="Top" Click="Back_Click" Width="108" Height="27"/>
+    </Grid>
+</Window>
