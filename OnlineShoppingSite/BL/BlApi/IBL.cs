@@ -1,5 +1,4 @@
 ﻿namespace BlApi;
-
 public interface IBl
 {
     public ICart Cart { get; }

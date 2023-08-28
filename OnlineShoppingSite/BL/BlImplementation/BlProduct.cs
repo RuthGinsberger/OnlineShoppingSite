@@ -13,8 +13,7 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function return products list.
     /// </summary>
-    /// <param name="category"></param>
-    /// <returns></returns>
+    /// <param name="category">The category to filter by</param>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<BO.ProductForList> GetProductsList(BO.Enums.eCategory category = default)
@@ -43,7 +42,6 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function return  products list.
     /// </summary>
-    /// <returns></returns>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<BO.ProductItem> GetProducstItem(BO.Enums.eCategory category = default)
@@ -73,7 +71,7 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function return a product for manager.
     /// </summary>
-    /// <param name="Id"></param>
+    /// <param name="Id">product id</param>
     /// <returns></returns>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="DataError"></exception>
@@ -106,8 +104,7 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function return a product for customer.
     /// </summary>
-    /// <param name="Id"></param>
-    /// <returns></returns>
+    /// <param name="Id">product id</param>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -121,7 +118,6 @@ internal class BlProduct : BlApi.IProduct
             {
                 Dal.DO.Product P;
                 lock (Dal) { P = Dal.Product.Get(p => p.ID == Id); }
-                //BO.ProductItem product = new();
                 BO.ProductItem pi = (from oi in c.Items
                                      where oi.ProductID == Id
                                      select new BO.ProductItem()
@@ -146,7 +142,7 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function add a product.
     /// </summary>
-    /// <param name="P"></param>
+    /// <param name="P">product to add</param>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -177,9 +173,9 @@ internal class BlProduct : BlApi.IProduct
     }
 
     /// <summary>
-    /// This function dalate a product acording to a product's id.
+    /// This function delete a product acording to a product's id.
     /// </summary>
-    /// <param name="ProductId"></param>
+    /// <param name="ProductId">product id to delete</param>
     /// <exception cref="DataError"></exception>
     /// <exception cref="IdInOrder"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -188,8 +184,6 @@ internal class BlProduct : BlApi.IProduct
         IEnumerable<Dal.DO.OrderItem> OrderItemsList = new List<Dal.DO.OrderItem>();
         IEnumerable<Dal.DO.Order> OrdersList = new List<Dal.DO.Order>();
         Dal.DO.Product P = new();
-        //int count;
-
         try
         {
             lock (Dal) { P = Dal.Product.Get(p => p.ID == ProductId); }
@@ -221,7 +215,7 @@ internal class BlProduct : BlApi.IProduct
     /// <summary>
     /// This function update a product .
     /// </summary>
-    /// <param name="P"></param>
+    /// <param name="P">oroduct id to update</param>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]

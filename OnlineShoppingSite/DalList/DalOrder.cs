@@ -25,7 +25,7 @@ public class DalOrder : IOrder
     /// <summary>
     /// This function return a order and using lambade expression.
     /// </summary>
-    /// <param name="func"></param>
+    /// <param name="func">lambada expression</param>
     /// <returns></returns>
     /// <exception cref="EntityNotFoundException"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -40,7 +40,7 @@ public class DalOrder : IOrder
     /// <summary>
     /// This function update a order.
     /// </summary>
-    /// <param name="order"></param>
+    /// <param name="order">order to update</param>
     /// <exception cref="EntityNotFoundException"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void Update(Order order)
@@ -53,7 +53,7 @@ public class DalOrder : IOrder
     /// <summary>
     /// This function delete a order.
     /// </summary>
-    /// <param name="id"></param>
+    /// <param name="id">order id to delete</param>
     /// <exception cref="EntityNotFoundException"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public void Delete(int id)
@@ -68,7 +68,7 @@ public class DalOrder : IOrder
     /// <summary>
     /// This function get all order by using lambada expression.
     /// </summary>
-    /// <param name="func"></param>
+    /// <param name="func">lambada expression to get by</param>
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<Order> GetAll(Func<Order, bool>? func = null)

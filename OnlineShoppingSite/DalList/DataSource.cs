@@ -97,7 +97,6 @@ public static class DataSource
         private static int orderItemID = 1000000;
         private static int orderID = 3000000;
         private static int productID = 6000000;
-       
         public static int OrderItemID { get { return orderItemID++; } }
         public static int OrderID { get { return orderID++; } }
         public static int ProductID { get { return productID++; } }

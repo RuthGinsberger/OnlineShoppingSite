@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 using static Dal.Exceptions;
 
 namespace Dal;
-
 internal class Order : IOrder
 {
     List<DO.Order>? Orders = new();
@@ -15,7 +14,6 @@ internal class Order : IOrder
     /// <summary>
     /// The function return an order id from the config.xml file and also increase the id. 
     /// </summary>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int OrderId() { 
         StreamReader configReader = new("..\\..\\..\\..\\xml\\Config.xml");
@@ -36,7 +34,6 @@ internal class Order : IOrder
     /// The function add an order to the xml file.
     /// </summary>
     /// <param name="item"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int Add(DO.Order item)
     {
@@ -89,7 +86,6 @@ internal class Order : IOrder
     /// The function get an order from the xml file acording to lambada expression.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public DO.Order Get(Func<DO.Order, bool> func)
     {
@@ -114,7 +110,6 @@ internal class Order : IOrder
     /// The function get all the orders from the xml file.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<DO.Order> GetAll(Func<DO.Order, bool>? func = null)
     {

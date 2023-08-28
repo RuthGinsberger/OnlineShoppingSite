@@ -16,7 +16,6 @@ internal class OrderItem : IOrderItem
     /// <summary>
     /// The function return an order item id from the config.xml file and also increase the id. 
     /// </summary>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int OrderItemId()
     {
@@ -39,7 +38,6 @@ internal class OrderItem : IOrderItem
     /// The function add an order item  to the xml file.
     /// </summary>
     /// <param name="item"></param>
-    /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int Add(DO.OrderItem item)
@@ -94,7 +92,6 @@ internal class OrderItem : IOrderItem
     /// The function get an order item  from the xml file acording to lambada expression.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public DO.OrderItem Get(Func<DO.OrderItem, bool> func)
     {
@@ -119,7 +116,6 @@ internal class OrderItem : IOrderItem
     /// The function get all the order items  from the xml file.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<DO.OrderItem> GetAll(Func<DO.OrderItem, bool>? func = null)
     {

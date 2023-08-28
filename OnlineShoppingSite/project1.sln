@@ -33,9 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{1F4DB85F-849
 		xml\Product.xml = xml\Product.xml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlTest", "XmlTest\XmlTest.csproj", "{F5C8D04C-23B0-4431-8451-D5A52E4DB7D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator", "Simulator\Simulator.csproj", "{F8E5EC27-771D-4B54-BA1E-64C00451765F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulator", "Simulator\Simulator.csproj", "{F8E5EC27-771D-4B54-BA1E-64C00451765F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +69,6 @@ Global
 		{44090712-D146-44E0-9B6D-5C7CAB497863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44090712-D146-44E0-9B6D-5C7CAB497863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44090712-D146-44E0-9B6D-5C7CAB497863}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5C8D04C-23B0-4431-8451-D5A52E4DB7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5C8D04C-23B0-4431-8451-D5A52E4DB7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5C8D04C-23B0-4431-8451-D5A52E4DB7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5C8D04C-23B0-4431-8451-D5A52E4DB7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8E5EC27-771D-4B54-BA1E-64C00451765F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8E5EC27-771D-4B54-BA1E-64C00451765F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8E5EC27-771D-4B54-BA1E-64C00451765F}.Release|Any CPU.ActiveCfg = Release|Any CPU

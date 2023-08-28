@@ -32,7 +32,6 @@ namespace PL
             myPermissen = Permission;
             list = List_;
             w = PLW;
-            // DataContext = tmpProduct;
             InitializeComponent();
             try
             {
@@ -83,7 +82,6 @@ namespace PL
             myPermissen = Permission;
             list_p = List;
             w = PLW;
-            // DataContext = tmpProduct;
             InitializeComponent();
 
             try
@@ -121,8 +119,6 @@ namespace PL
         {
             try
             {
-                //int ID = Conver
-                //t.ToInt32(id.Text);
                 bl.Product.DeleteProduct(id);
                 MessageBox.Show("Delete succefuly!");
                 w.Show();

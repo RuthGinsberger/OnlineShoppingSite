@@ -1,9 +1,6 @@
 ﻿using BO;
 using System.Windows;
-
 namespace PL.PO
-
-
 {
     public class ProductForList : DependencyObject
     {

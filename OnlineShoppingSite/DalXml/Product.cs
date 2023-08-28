@@ -11,13 +11,10 @@ internal class Product : IProduct
 {
     XDocument? root = XDocument.Load("..\\..\\..\\..\\xml\\Product.xml");
     DO.Product p = new();
-
-
     /// <summary>
     /// The function add an product to the xml file.
     /// </summary>
     /// <param name="Item"></param>
-    /// <returns></returns>
     private IEnumerable<DO.Product> Casting(IEnumerable<XElement>? allProduct)
     {
         try
@@ -39,7 +36,6 @@ internal class Product : IProduct
     /// The function delete an product from the xml file.
     /// </summary>
     /// <param name="p"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int Add(DO.Product p)
     {
@@ -82,12 +78,10 @@ internal class Product : IProduct
         { throw Dexc; }
     }
 
-
     /// <summary>
     /// The function get an product from the xml file acording to lambada expression.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public DO.Product Get(Func<DO.Product, bool> func)
     {
@@ -105,7 +99,6 @@ internal class Product : IProduct
     /// The function get all the products from the xml file.
     /// </summary>
     /// <param name="func"></param>
-    /// <returns></returns>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<DO.Product> GetAll(Func<DO.Product, bool>? func = null)
     {

@@ -1,12 +1,8 @@
 ﻿using BlApi;
-using BO;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-
 
 namespace PL
 {
@@ -22,8 +18,6 @@ namespace PL
 
         public PO.Cart PoCart { get; set; } = new();
         PO.OrderItem myOrderItem;
-
-        //ObservableCollection<PO.Cart> List_c = new();
         public CartWindow(IBl BL, BO.Cart cart,Window productC)
         {
             InitializeComponent();
@@ -36,11 +30,9 @@ namespace PL
         }
         private PO.Cart ShowCart()
         {
-            if (PoCart != null)
-            { PoCart.Items.Clear(); }
-           
-           
-
+            if (PoCart != null) { 
+             PoCart.Items.Clear();
+            }
             myCart.Items.Select(tmp =>
             {
                 myOrderItem = Common.convertItemsToPOOI(tmp);
@@ -48,8 +40,6 @@ namespace PL
                 PoCart.TotalPrice += (myOrderItem.TotalPrice);
                 return tmp;
             }).ToList();
-
-
             return PoCart;
         }
         private void ConfirmBtnEnabled()
@@ -70,10 +60,6 @@ namespace PL
                 PoCart = Common.ConvertToPoCart(myCart);
                 DataContext = PoCart;
                 ConfirmBtnEnabled();
-                
-                //CartWindow cartWindow = new CartWindow(bl, myCart);
-                //cartWindow.Show();
-                //this.Hide();
             }
             catch (Exception)
             {
@@ -117,15 +103,6 @@ namespace PL
                 MessageBox.Show("Can't decrease Product's amount");
             }
         }
-
-        //private void updateCart()
-        //{
-        //    myCart = Common.ConvertToBoCart(PoCart);
-        //    PO.OrderItem changed = (PO.OrderItem)((Button)sender).DataContext;
-        //    bl.Cart.UpdateAmountProduct(myCart, changed.ProductID, 0);
-        //    PoCart.Items.Clear();
-        //    PoCart = Common.ConvertToPoCart(myCart);
-        //}
         private void Confirm(object sender, RoutedEventArgs e)
         {
             try

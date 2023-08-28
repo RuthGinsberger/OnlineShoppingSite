@@ -1,13 +1,4 @@
-﻿using BO;
-
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace PL
 {
     public static class Common
@@ -26,7 +17,6 @@ namespace PL
             {
                 Poi = convertItemsToPOOI(item);
                 Pc.Items.Add(Poi);
-                // Pc.TotalPrice+=Poi.TotalPrice;
             }
             return Pc;
         }

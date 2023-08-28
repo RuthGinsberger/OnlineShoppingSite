@@ -3,10 +3,7 @@ namespace Dal;
 
 sealed public class DalXml : IDal
 {
-    private DalXml()
-    {
-
-    }
+    private DalXml() {}
     public static IDal Instance { get; } = new DalXml();
     public IProduct Product { get; } = new Product();
     public IOrder Order { get; } = new Order();

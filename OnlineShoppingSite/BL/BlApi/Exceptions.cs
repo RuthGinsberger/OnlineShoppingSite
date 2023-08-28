@@ -49,6 +49,10 @@ public class NotExist : Exception
     public override string Message => $"This {msg} not exist.";
 }
 
+
+/// <summary>
+/// Exception when the item amount out of stock.
+/// </summary>
 public class BlOutOfStockException : Exception
 {
     public override string Message =>"Out Of Stock";

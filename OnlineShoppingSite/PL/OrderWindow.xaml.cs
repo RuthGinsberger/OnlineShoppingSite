@@ -117,13 +117,5 @@ namespace PL
             }
             Close();
         }
-
-        //private void AddProductBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    order = bl.Order.GetOrder(tmpOrder.ID);
-        //    OrderItem = bl.Product.GetProductManager(Convert.ToInt32(TextBox_ID.Text));
-        //    order.Items.Add(Convert.ToInt32(TextBox_ID.Text));
-
-        //}
     }
 }

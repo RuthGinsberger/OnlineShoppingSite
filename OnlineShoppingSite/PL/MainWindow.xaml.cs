@@ -2,7 +2,6 @@
 using System;
 using System.Windows;
 
-
 namespace PL
 {
     /// <summary>

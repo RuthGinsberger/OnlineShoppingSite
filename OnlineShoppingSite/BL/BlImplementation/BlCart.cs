@@ -2,7 +2,6 @@
 namespace BlImplementation;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
-using Dal;
 internal class BlCart : ICart
 {
     private DalApi.IDal Dal { get; set; } = DalApi.Factory.Get();
@@ -10,9 +9,8 @@ internal class BlCart : ICart
     /// <summary>
     /// This function add a product th the OrderItem list.
     /// </summary>
-    /// <param name="C"></param>
-    /// <param name="Id"></param>
-    /// <returns></returns>
+    /// <param name="C">user cart</param>
+    /// <param name="Id">id of the product to add</param>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public BO.Cart AddProduct(BO.Cart C, int Id)
@@ -68,10 +66,9 @@ internal class BlCart : ICart
     /// <summary>
     /// This function update the amount of a product.
     /// </summary>
-    /// <param name="C"></param>
-    /// <param name="Id"></param>
-    /// <param name="amount"></param>
-    /// <returns></returns>
+    /// <param name="C">user cart</param>
+    /// <param name="Id">product id to update</param>
+    /// <param name="amount">amount to update</param>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public BO.Cart UpdateAmountProduct(BO.Cart C, int Id, int amount)
@@ -108,14 +105,10 @@ internal class BlCart : ICart
         }
         return C;
     }
-
     /// <summary>
     /// This function confirm the a cart's order.
     /// </summary>
-    /// <param name="C"></param>
-    /// <param name="name"></param>
-    /// <param name="email"></param>
-    /// <param name="adress"></param>
+    /// <param name="C">user cart</param>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="NotExist"></exception>
     /// <exception cref="DataError"></exception>
@@ -170,7 +163,7 @@ internal class BlCart : ICart
     /// <summary>
     /// This function check if the customer's email is valid.
     /// </summary>
-    /// <param name="email"></param>
+    /// <param name="email">user email address</param>
     /// <returns></returns>
     private bool IsValidEmail(string email)
     {

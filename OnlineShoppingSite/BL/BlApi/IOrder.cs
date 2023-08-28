@@ -1,6 +1,4 @@
 ﻿using BO;
-using System.Collections;
-
 namespace BlApi;
 public interface IOrder
 {

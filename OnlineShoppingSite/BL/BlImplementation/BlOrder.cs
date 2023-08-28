@@ -1,7 +1,6 @@
 ﻿using BlApi;
 using DalApi;
 namespace BlImplementation;
-using Dal;
 using System;
 using static BO.Enums;
 using System.Runtime.CompilerServices;
@@ -14,10 +13,6 @@ internal class BlOrder : BlApi.IOrder
     /// </summary>
     /// <param name="DeliveryDate"></param>
     /// <param name="ShipDate"></param>
-    /// <param name="OrderDate"></param>
-    /// <returns></returns>
-    /// 
-
     [MethodImpl(MethodImplOptions.Synchronized)]
     public BO.Enums.eOrderStatus Status(DateTime? DeliveryDate, DateTime? ShipDate)
     {
@@ -49,7 +44,6 @@ internal class BlOrder : BlApi.IOrder
     /// <param name="OrderId"></param>
     /// <returns></returns>
     /// <exception cref="DataError"></exception>
-    /// 
     [MethodImpl(MethodImplOptions.Synchronized)]
     public List<BO.OrderItem> Items(int OrderId)
     {
@@ -77,10 +71,9 @@ internal class BlOrder : BlApi.IOrder
     }
 
     /// <summary>
-    /// The function return a OrderTracking object and also update a list with all the order's status.
+    /// The function return a orderTracking object and also update a list with all the order's status.
     /// </summary>
     /// <param name="orderId"></param>
-    /// <returns></returns>
     /// <exception cref="DataError"></exception>
 
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -123,7 +116,6 @@ internal class BlOrder : BlApi.IOrder
     /// This function return the total price of an order.
     /// </summary>
     /// <param name="OrderId"></param>
-    /// <returns></returns>
     private double TotalPrice_(int OrderId)
     {
         IEnumerable<Dal.DO.OrderItem> OrderItemsList = new List<Dal.DO.OrderItem>();
@@ -136,7 +128,6 @@ internal class BlOrder : BlApi.IOrder
     /// <summary>
     /// This function return a products list.
     /// </summary>
-    /// <returns></returns>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public IEnumerable<BO.OrderForList> GetOrdersList()
@@ -168,7 +159,6 @@ internal class BlOrder : BlApi.IOrder
     /// This function return an order acording to id.
     /// </summary>
     /// <param name="OrderId"></param>
-    /// <returns></returns>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="DataError"></exception>
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -208,7 +198,6 @@ internal class BlOrder : BlApi.IOrder
     /// This function return the BOorder and update the ShipDate's order to now.
     /// </summary>
     /// <param name="OrderId"></param>
-    /// <returns></returns>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="BlNoNeedToUpdateException"></exception>
     /// <exception cref="DataError"></exception>
@@ -259,7 +248,6 @@ internal class BlOrder : BlApi.IOrder
     /// This function return the BOorder and update the DeliveryDate's order to now.
     /// </summary>
     /// <param name="OrderId"></param>
-    /// <returns></returns>
     /// <exception cref="InvalidValue"></exception>
     /// <exception cref="BlNoNeedToUpdateException"></exception>
     /// <exception cref="DataError"></exception>
@@ -306,6 +294,9 @@ internal class BlOrder : BlApi.IOrder
         }
     }
 
+    /// <summary>
+    /// The function returns the ID of the order that is most urgent to handle
+    /// </summary>
     [MethodImpl(MethodImplOptions.Synchronized)]
     public int? ChooseOrder()
     {

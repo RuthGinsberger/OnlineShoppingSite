@@ -1,9 +1,4 @@
 ﻿using BO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PL.PO
@@ -36,7 +31,6 @@ namespace PL.PO
             set { SetValue(CategoryProperty, value); }
         }
         public static readonly DependencyProperty CategoryProperty = DependencyProperty.Register("Status", typeof(Enums.eOrderStatus), typeof(OrderForList), new UIPropertyMetadata(Enums.eOrderStatus.Confirmed));
-
 
         public int AmountOfItems
         {

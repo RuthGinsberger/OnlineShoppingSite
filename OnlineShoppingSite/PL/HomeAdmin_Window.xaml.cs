@@ -1,8 +1,4 @@
-﻿
-
-
-using BlApi;
-using BO;
+﻿using BlApi;
 using System.Windows;
 
 namespace PL
